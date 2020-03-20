@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/react-redux-sample.iml" filepath="$PROJECT_DIR$/.idea/react-redux-sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/react-challenge.iml" filepath="$PROJECT_DIR$/.idea/react-challenge.iml" />
     </modules>
   </component>
 </project>
