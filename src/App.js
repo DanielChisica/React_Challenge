@@ -5,6 +5,7 @@ import rootReducer from './redux/reducers/rootReducer';
 import { BrowserRouter as Router} from "react-router-dom";
 import Navbar from "./components/navbarComponent";
 import {loginLink, registerLink} from "./routes/navbarRoutes";
+import './styles/index.css'
 
 const store = createStore(rootReducer);
 

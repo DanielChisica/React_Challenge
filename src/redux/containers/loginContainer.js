@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import login from "../../components/loginComponent";
+import login from "../../components/registerComponent";
 
 const mapStateToProps = (state) => {
     return {email: state.email, logged:state.logged}

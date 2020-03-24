@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Phone = props => {
 
@@ -12,10 +13,23 @@ const Phone = props => {
 
     return (
         <div className="input-container">
-            <input type="tel" className={inputElement} {...props} />
-            <p className={warningControl}></p>
+            <label>
+                {props.label}
+                <input type="tel" placeholder="123-45-67" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" name={props.name}
+                       className={inputElement} value={props.value} onChange={props.onChange}/>
+            </label>
+            <p className={warningControl}>Invalid number, please match the requested format</p>
         </div>
     );
+}
+
+Phone.propTypes={
+    name: PropTypes.string.isRequired,
+    label:PropTypes.string.isRequired,
+    value:PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
+    touched: PropTypes.bool.isRequired,
+    valid:PropTypes.bool.isRequired
 }
 
 export default Phone;

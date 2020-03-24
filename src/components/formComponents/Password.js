@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Password = props => {
 
@@ -12,10 +13,23 @@ const Password = props => {
 
     return (
         <div className="input-container">
-            <input type="password" className={inputElement} {...props} />
-            <p className={warningControl}></p>
+            <label>
+                {props.label}
+                <input type="password" name={props.name} className={inputElement} value={props.value} onChange={props.onChange}/>
+            </label>
+            <p className={warningControl}>{props.warningMessage}</p>
         </div>
     );
+}
+
+Password.propTypes={
+    name: PropTypes.string.isRequired,
+    label:PropTypes.string.isRequired,
+    value:PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
+    touched: PropTypes.bool.isRequired,
+    valid:PropTypes.bool.isRequired,
+    warningMessage: PropTypes.string.isRequired
 }
 
 export default Password;

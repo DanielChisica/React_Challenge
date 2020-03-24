@@ -1,24 +1,29 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Country = props => {
 
-    let inputElement = "input-element";
-
-    if (props.touched && !props.valid) {
-        inputElement = 'input-element input-error';
-    }
-
     return (
         <div className="input-container">
-            <select className={inputElement} value={props.value} onChange={props.onChange} name={props.name}>
-                {props.options.map(option => (
-                    <option value={option.code}>
-                        {option.name}
-                    </option>
-                ))}
-            </select>
+            <label>
+                {props.label}
+                <select className="select-object" value={props.value} name={props.name}>
+                    {props.options.map(option => (
+                        <option value={option.code}>
+                            {option.name}
+                        </option>
+                    ))}
+                </select>
+            </label>
         </div>
     );
+}
+
+Country.propTypes={
+    name: PropTypes.string.isRequired,
+    label:PropTypes.string.isRequired,
+    value:PropTypes.string.isRequired,
+    options:PropTypes.array.isRequired
 }
 
 export default Country;
