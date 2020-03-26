@@ -10,7 +10,7 @@ class login extends React.Component {
         this.state = {
             formControls: {
                 email: {
-                    value: '',
+                    value: (this.props.registered.submitReducer)?this.props.email.submitReducer:'',
                     valid: false,
                     validationRules: {
                         isRequired: true,

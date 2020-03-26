@@ -1,14 +1,21 @@
-import * as types from '../constants/actiontypes'
+import * as types from '../constants/actiontypes';
+import store from "../stores/mainStore";
 
-const submitReducer = (state = {}, action) => {
+const submitReducer = (action) => {
     switch (action.type) {
         case types.REGISTER:
             return {
                 email:action.email,
-                logged:true
+                registered:action.registered
             };
+
+        case types.REGISTERING:
+            return {
+                registering:action.registering
+            }
+
         default:
-            return state;
+            return store.getState;
     }
 };
 

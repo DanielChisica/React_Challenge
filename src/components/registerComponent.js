@@ -73,7 +73,7 @@ class register extends React.Component {
 
 
             },
-
+            formMessage:(this.props.registered.submitReducer) ? "info" : "info-hidden"
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -90,6 +90,12 @@ class register extends React.Component {
             console.log(event.target.country.value)
             console.log(event.target.picture.files[0])
             console.log(event.target.birthday.value)
+            this.props.submitUserData(
+                {
+                    email:this.state.formControls.email.value,
+                    registered:true
+                }
+            )
         } else{
             console.log('Uncompleted data')
         }
@@ -123,9 +129,9 @@ class register extends React.Component {
                 </label>
 
                 <Country name="country" label="Nationality:" value="" options={Countries}/>
-
                 <input type="submit" value="Register" id="register-button"/>
         </form>
+            <p className={this.state.formMessage}>Your information has been submitted</p>
         </div>)
     }
 }

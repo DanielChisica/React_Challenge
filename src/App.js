@@ -1,26 +1,13 @@
-import React from 'react';
-import { Provider} from 'react-redux';
-import { createStore } from 'redux';
-import rootReducer from './redux/reducers/rootReducer';
-import { BrowserRouter as Router} from "react-router-dom";
-import Navbar from "./components/navbarComponent";
-import {loginLink, registerLink} from "./routes/navbarRoutes";
-import './styles/index.css'
-
-const store = createStore(rootReducer);
+import React, {useState} from 'react';
+import {Provider} from 'react-redux';
+import AppContainer from "./redux/containers/appContainer";
+import store from "./redux/stores/mainStore";
 
 class App extends React.Component {
-  render() {
+    render() {
     return (
         <Provider store={store}>
-            <Router>
-                <div className="container">
-                    <Navbar />
-                    <br/>
-                    {loginLink}
-                    {registerLink}
-                </div>
-            </Router>
+            <AppContainer/>
         </Provider>
     );
   }

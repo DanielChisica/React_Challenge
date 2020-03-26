@@ -1,8 +1,8 @@
 import {connect} from 'react-redux';
-import login from "../../components/registerComponent";
+import login from "../../components/loginComponent";
 
 const mapStateToProps = (state) => {
-    return {email: state.email, logged:state.logged}
+    return {email: state.email, registered:state.registered}
 };
 
 const loginContainer = connect(mapStateToProps, null)(login);
