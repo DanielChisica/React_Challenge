@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/index.css';
+import '../styles/index.css'
 import changeHandler from "../classes/changeHandler";
 import Email from "./formComponents/Email";
 import Password from "./formComponents/Password";

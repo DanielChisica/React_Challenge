@@ -1,7 +1,7 @@
 import * as types from '../constants/actiontypes';
 import store from "../stores/mainStore";
 
-const submitReducer = (action) => {
+const submitReducer = action => {
     switch (action.type) {
         case types.REGISTER:
             return {

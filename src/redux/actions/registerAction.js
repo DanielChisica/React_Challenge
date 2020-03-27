@@ -1,6 +1,6 @@
 import * as types from '../constants/actiontypes'
 
-export const registerData = userData => {
+const registerData = userData => {
     return {
         type: types.REGISTER,
         email: userData.email,
@@ -8,9 +8,20 @@ export const registerData = userData => {
     }
 };
 
-export const registeringData = formState => {
+const registeringData = formState => {
     return {
         type: types.REGISTERING,
         registering: formState.registering
+    }
+};
+
+export const submitData = userData=>{
+    return dispatch=>{
+        dispatch(registeringData({registering:true}))
+
+        setTimeout(()=>{
+            dispatch(registeringData({registering:false}))
+            dispatch(registerData(userData))
+        },3000);
     }
 }

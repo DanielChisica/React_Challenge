@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {BrowserRouter as Router} from "react-router-dom";
-import Navbar from "./components/navbarComponent";
-import {loginLink, registerLink} from "./routes/navbarRoutes";
+import Navbar from "./navbarComponent";
+import {loginLink, registerLink} from "../routes/navbarRoutes";
 import Modal from "react-modal";
-import './styles/index.css'
+import '../styles/index.css'
 
 Modal.setAppElement("#root");
 

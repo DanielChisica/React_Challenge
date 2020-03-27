@@ -5,4 +5,3 @@ import thunkMiddleware from 'redux-thunk';
 const store = createStore(rootReducer,applyMiddleware(thunkMiddleware.default));
 
 export default store;
-

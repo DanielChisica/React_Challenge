@@ -1,6 +1,6 @@
 import React from 'react';
 import {Form} from 'react-bootstrap';
-import './styles/index.css';
+import '../styles/index.css'
 import changeHandler from "../classes/changeHandler";
 import Countries from "../assets/json/countries"
 import Country from "./formComponents/Country";

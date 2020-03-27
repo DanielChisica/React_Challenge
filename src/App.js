@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Provider} from 'react-redux';
 import AppContainer from "./redux/containers/appContainer";
 import store from "./redux/stores/mainStore";
