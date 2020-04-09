@@ -15,7 +15,7 @@ const Phone = props => {
         <div className="input-container">
             <label>
                 {props.label}
-                <input type="tel" placeholder="123-45-67" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" name={props.name}
+                <input type="tel" placeholder="123-45-67" pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}" name={props.name}
                        className={inputElement} value={props.value} onChange={props.onChange}/>
             </label>
             <p className={warningControl}>Invalid number, please match the requested format</p>

@@ -4,7 +4,7 @@
  * @param rules Object which contains validation rules
  * @returns {boolean} isValid
  */
-const validate = (value, rules) => {
+const validate = (value, rules=[]) => {
     let isValid = true;
 
     for (let rule in rules) {
@@ -66,7 +66,7 @@ const emailValidator = value => {
  * @returns {boolean} isValid
  */
 const passwordValidator = value => {
-    return (/\d/).test(String(value)) && String(value).match(/[A-Z]/) && String(value).match(/[^a-z0-9]/i)
+    return (/\d/).test(String(value)) && String(value).match(/[A-Z]/)!==null && String(value).match(/[^a-z0-9]/i)!==null
 }
 
 /**
@@ -75,7 +75,7 @@ const passwordValidator = value => {
  * @returns {boolean} isValid
  */
 const phoneValidator= value =>{
-    return String(value).match(/[0-9]{3}-[0-9]{2}-[0-9]{2}/) === String(value)
+    return String(value).match(/[0-9]{3}-[0-9]{2}-[0-9]{2}/) !==null
 }
 
 export default validate;

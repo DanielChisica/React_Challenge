@@ -11,12 +11,11 @@ class AppComponent extends React.Component {
     render() {
         return (
             <div className="appContainer">
-                <Modal isOpen={this.props.registering.submitReducer} style={{content: {width: '30%'}}}>
+                <Modal isOpen={this.props.registering!==undefined?this.props.registering:false} style={{content: {width: '30%',height:'30%'}}}>
                     <p>Submitting your information</p>
                 </Modal>
                 <Router>
                     <Navbar/>
-                    <br/>
                     {registerLink}
                     {loginLink}
                 </Router>

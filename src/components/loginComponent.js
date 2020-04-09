@@ -10,8 +10,8 @@ class login extends React.Component {
         this.state = {
             formControls: {
                 email: {
-                    value: (this.props.registered.submitReducer)?this.props.email.submitReducer:'',
-                    valid: false,
+                    value: (this.props.registered!==undefined)?this.props.email:'',
+                    valid: this.props.registered!==undefined?this.props.registered:false,
                     validationRules: {
                         isRequired: true,
                         isEmail: true
@@ -29,7 +29,8 @@ class login extends React.Component {
                 }
             }
         }
-        this.loginClick=this.loginClick.bind(this)
+        this.loginClick=this.loginClick.bind(this);
+        this.handleChange= this.handleChange.bind(this);
     }
 
     loginClick(event){
@@ -41,12 +42,18 @@ class login extends React.Component {
         }
     }
 
+    handleChange(event){
+        changeHandler(event,this);
+    }
+
     render() {
+        console.log(this.props)
+        console.log(this.state)
         return(<div className="loginForm-container">
-            <Email name="email" label="Account e-mail:" value={this.state.formControls.email.value} onChange={changeHandler}
+            <Email name="email" label="Account e-mail:" value={this.state.formControls.email.value} onChange={this.handleChange}
                    touched={this.state.formControls.email.touched} valid={this.state.formControls.email.valid}/>
 
-            <Password name="password" label="Enter your password:" value={this.state.formControls.password.value}
+            <Password name="password" label="Enter your password:" value={this.state.formControls.password.value} onChange={this.handleChange}
                       warningMessage="Introduce a password" touched={this.state.formControls.password.touched}
                       valid={this.state.formControls.password.valid}/>
 

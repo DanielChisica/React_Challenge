@@ -1,14 +1,14 @@
 import validate from "./validation";
+
 /**
  * Manages the change event of an input element
  * @param event
  */
-const changeHandler = event => {
+const changeHandler = (event,form) => {
     const name = event.target.name;
     const value = event.target.value;
-
     const updatedControls = {
-        ...this.state.formControls
+        ...form.state.formControls
     };
     const updatedFormElement = {
         ...updatedControls[name]
@@ -24,7 +24,7 @@ const changeHandler = event => {
         formIsValid = updatedControls[inputIdentifier].valid && formIsValid;
     }
 
-    this.setState({
+    form.setState({
         formControls: updatedControls,
         formIsValid: formIsValid
     });
