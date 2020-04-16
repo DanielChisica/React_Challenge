@@ -84,7 +84,7 @@ input:focus, textarea:focus, .form-button {
     padding-right: 5px;
     padding-bottom: 3px;
     font-family: "Freight Sans Medium";
-    font-size: 13px;
+    font-size: 26px;
     border-bottom: 2px solid #222422;
 }
 
@@ -93,7 +93,7 @@ input:focus, textarea:focus, .form-button {
 }
 
 .error-container{
-    min-height: 28px;
+    min-height: 41px;
 }
 
 .warning{
@@ -103,7 +103,7 @@ input:focus, textarea:focus, .form-button {
 .show-warning{
     color: #ba4a00;
     font-family: "Freight Sans Light";
-    font-size: 13px;
+    font-size: 26px;
     padding-top: 13px;
     margin: 0 0 0 0;
 }
@@ -168,7 +168,7 @@ input:focus, textarea:focus, .form-button {
     border-bottom: 3px solid lightgray;
     border-radius: 3px;
     font-family: "Freight Sans Bold";
-    font-size: 13px;
+    font-size: 26px;
     color: #00b96a;
 }
 
