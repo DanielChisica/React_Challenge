@@ -14,11 +14,11 @@ const Password = props => {
     return (
         <div className="input-container">
             <label>
-                {props.label}
+                <div className="label">{props.label}</div>
                 <input type="password" name={props.name} className={inputElement} value={props.value}
                        onChange={props.onChange}/>
             </label>
-            <p className={warningControl}>{props.warningMessage}</p>
+            <div className="error-container"><p className={warningControl}>{props.warningMessage}</p></div>
         </div>
     );
 }

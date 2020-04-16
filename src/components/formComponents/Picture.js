@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 const Picture = props => {
     return (
-        <div className="input-container">
+        <div className="input-container input-file">
             <label>
-                {props.label}
+                <div className="label">{props.label}</div>
                 <input name={props.name} type="file" className="input-file" accept="image/png, image/jpeg" />
             </label>
         </div>

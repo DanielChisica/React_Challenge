@@ -5,19 +5,15 @@ export default class Navbar extends Component {
 
     render() {
         return (
-            <nav>
-                <Link to="/register"></Link>
-                <div>
-                    <ul>
-                        <li className="navbar-item">
-                            <Link to="/register" className="nav-link">Register</Link>
-                        </li>
-                        <li className="navbar-item">
-                            <Link to="/login" className="nav-link">Log in</Link>
-                        </li>
+                <div className="navbar">
+                    <Link to="/" className="navbar-item"><img className="navbar-logo" src={require('../assets/images/brand.jpg')} alt="brand"/> </Link>
+                    <nav className="nav-bar">
+                    <ul className="nav-links">
+                        <li className="navbar-link"><Link to="/register" className="nav-link">Register</Link></li>
+                        <li className="navbar-link"><Link to="/login" className="nav-link">Sign in</Link></li>
                     </ul>
+                    </nav>
                 </div>
-            </nav>
         );
     }
 }

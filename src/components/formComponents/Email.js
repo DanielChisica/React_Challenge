@@ -14,10 +14,11 @@ const Email = props => {
     return (
         <div className="input-container">
             <label>
-                {props.label}
-                <input type="email" name={props.name} className={inputElement} value={props.value} onChange={props.onChange}/>
+                <div className="label">{props.label}</div>
+                <input type="email" name={props.name} className={inputElement} value={props.value} size="30"
+                       onChange={props.onChange}/>
             </label>
-            <p className={warningControl}>Invalid e-mail, please verify it</p>
+            <div className="error-container"><p className={warningControl}>*Invalid e-mail, please verify it</p></div>
         </div>
     );
 }

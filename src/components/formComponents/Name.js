@@ -14,10 +14,10 @@ const Name = props => {
     return (
         <div className="input-container">
             <label>
-                {props.label}
+                <div className="label">{props.label}</div>
                 <input type="text" name={props.name} className={inputElement} value={props.value} onChange={props.onChange}/>
             </label>
-            <p className={warningControl}>Must have 3 characters at least</p>
+            <div className="error-container"><p className={warningControl}>*Must have 3 characters at least</p></div>
         </div>
     );
 }

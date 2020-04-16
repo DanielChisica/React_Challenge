@@ -1,0 +1,233 @@
+@font-face {
+    font-family: "Freight Sans Bold";
+    src: url("../assets/fonts/Freight Sans/Freight Sans Bold.otf");
+}
+
+@font-face {
+    font-family: "Freight Sans Light";
+    src: url("../assets/fonts/Freight Sans/Freight Sans Light.otf");
+}
+
+@font-face {
+    font-family: "Freight Sans Medium";
+    src: url("../assets/fonts/Freight Sans/Freight Sans Medium.otf");
+}
+
+body{
+    background-color: #fcfcfc;
+    color: #222422;
+}
+
+input:focus, textarea:focus, .form-button {
+    outline: none;
+}
+
+.register-form-container, .login-form-container{
+    display: block;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+}
+
+.input-container{
+    margin: 26px 26px 26px 26px;
+}
+
+.select-items{
+    font-family: "Freight Sans Light";
+    font-size: 13px;
+    height: 256px;
+    overflow-y: scroll;
+}
+
+.select-selected {
+    background-color: #f5f5f5;
+    font-family: "Freight Sans Bold";
+    font-size: 13px;
+}
+
+.list-header{
+    min-width: 193px;
+    display: inline-block;
+}
+
+.arrow:after{
+    content: '\25bc';
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+    background-color: #f5f5f5;
+    color: #333422;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    user-select: none;
+}
+
+.dropdown{
+    text-align: left;
+    display:inline-block;
+    width: 240px;
+    border-left: 1px solid lightgray;
+    border-right: 2px solid lightgray;
+    border-bottom: 2px solid lightgray;
+    border-top: 1px solid lightgray;
+    border-radius: 10px;
+}
+
+.input-element{
+    background-color: #fcfcfc;
+    border: none;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 3px;
+    font-family: "Freight Sans Medium";
+    font-size: 13px;
+    border-bottom: 2px solid #222422;
+}
+
+.input-error{
+    border-bottom: 2px solid #ba4a00;
+}
+
+.error-container{
+    min-height: 28px;
+}
+
+.warning{
+    display: none;
+}
+
+.show-warning{
+    color: #ba4a00;
+    font-family: "Freight Sans Light";
+    font-size: 13px;
+    padding-top: 13px;
+    margin: 0 0 0 0;
+}
+
+.label{
+    font-family: "Freight Sans Medium";
+    font-size: 26px;
+    margin-bottom: 13px;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+    display: none;
+}
+
+.select-items div:hover{
+    background-color: #ffffff;
+    border-left: 3px solid #00b96a;
+    font-family: "Freight Sans Bold";
+    font-size: 13px;
+}
+
+.navbar-item{
+    font-family: "Freight Sans Medium";
+    font-size: 26px;
+}
+
+.header{
+    font-family: "Freight Sans Bold";
+    font-size: 26px;
+    text-align: center;
+}
+
+.paragraph{
+    font-family: "Freight Sans Light";
+    font-size: 26px;
+    display: block;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+
+.headline{
+    font-family: "Freight Sans Bold";
+    font-size: 52px;
+    text-align: center;
+}
+
+.subtitle{
+    font-family: "Freight Sans Bold";
+    font-size: 26px;
+    text-align: center;
+}
+
+.form-button{
+    cursor: pointer;
+    padding: 8px 39px;
+    background-color: #f5f5f5;
+    border-top: 1px solid lightgray;
+    border-right: 3px solid lightgray;
+    border-left: 2px solid lightgray;
+    border-bottom: 3px solid lightgray;
+    border-radius: 3px;
+    font-family: "Freight Sans Bold";
+    font-size: 13px;
+    color: #00b96a;
+}
+
+.form-button:hover{
+    background-color: #ffffff;
+}
+
+.form-button:active{
+    color: #ffffff;
+    background-color: #00b96a;
+}
+
+.info{
+    color: #00a1ba;
+    font-family: "Freight Sans Medium";
+    font-size: 26px;
+    text-align: center;
+}
+
+.info-hidden{
+    display: none;
+}
+
+.check{
+    height: 18px;
+}
+
+.navbar-logo{
+    height: 39px;
+    width: 158px;
+    padding-top: 11px;
+    margin-left: 55%;
+}
+
+.nav-link{
+    font-family: "Freight Sans Medium";
+    font-size: 26px;
+    color: #222422;
+    text-decoration: none;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid lightgray;
+}
+
+.nav-links{
+    list-style: none;
+}
+
+.nav-links li{
+    display: inline-block;
+}
+
+.nav-bar{
+    margin-left: 48%;
+}
+
+.nav-link{
+    padding-left: 60px;
+}

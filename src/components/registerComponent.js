@@ -3,7 +3,7 @@ import {Form} from 'react-bootstrap';
 import '../styles/index.css'
 import changeHandler from "../classes/changeHandler";
 import Countries from "../assets/json/countries"
-import Country from "./formComponents/Country";
+import List from "./formComponents/List";
 import Email from "./formComponents/Email";
 import Name from "./formComponents/Name";
 import Password from "./formComponents/Password";
@@ -17,7 +17,7 @@ class register extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state= {
+        this.state={
             formControls: {
 
                 name: {
@@ -69,17 +69,11 @@ class register extends React.Component {
                         isPhone: true
                     },
                     touched: false
-                },
-
-                country:{
-                    value: '',
-                    valid: false,
-                    touched: false,
                 }
-            },
-            formMessage:
-                (this.props.registered!==undefined) ? this.props.registered?"info":"info-hidden" : "info-hidden"
-        }
+            }
+        };
+        this.baseState=this.state;
+        this.countryRef=React.createRef();
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange=this.handleChange.bind(this);
     }
@@ -97,8 +91,8 @@ class register extends React.Component {
         if (this.state.formControls.name.valid && this.state.formControls.lastName.valid && this.state.formControls.email.valid
             && this.state.formControls.password.valid){
             console.log(this.state);
-            console.log(event.target.country.value);
             console.log(event.target.picture.files[0]);
+            console.log(this.countryRef.current.state.value)
             console.log(event.target.birthday.value);
             this.props.submitUserData(
                 {
@@ -106,15 +100,20 @@ class register extends React.Component {
                     registered:true
                 }
             )
+            this.setState(this.baseState)
         } else{
             console.log('Uncompleted data')
         }
     }
 
     render() {
-        console.log(this.props)
-        console.log(this.state);
-        return(<div className="registerForm-container">
+        return(<div className="register-form-container">
+            <div className="header">
+                <h1>Join Medium.</h1>
+            </div>
+            <div className="paragraph">
+                <p>Create an account to receive great stories in your inbox, personalize your homepage, and follow authors and topics that you love.</p>
+            </div>
             <form onSubmit={this.handleSubmit}>
                 <Name name="name" label="Name:" value={this.state.formControls.name.value} onChange={this.handleChange}
                       touched={this.state.formControls.name.touched} valid={this.state.formControls.name.valid}/>
@@ -126,7 +125,7 @@ class register extends React.Component {
                        touched={this.state.formControls.email.touched} valid={this.state.formControls.email.valid}/>
 
                 <Password name="password" label="Introduce a password:" value={this.state.formControls.password.value}
-                          warningMessage="Requires: at least 8 digits, 1 uppercase, 1 number and 1 special character"
+                          warningMessage="*Requires: at least 8 digits, 1 uppercase, 1 number and 1 special character"
                           onChange={this.handleChange} touched={this.state.formControls.password.touched}
                           valid={this.state.formControls.password.valid}/>
 
@@ -136,17 +135,20 @@ class register extends React.Component {
                        touched={this.state.formControls.phone.touched} valid={this.state.formControls.phone.valid}/>
 
                 <label>
-                    Date of birth:
+                    <div className="label">Date of birth:</div>
                     <Form.Control type="date" name="birthday" placeholder="dd-mm-yyyy"/>
                 </label>
 
-                <Country name="country" label="Nationality:" value={this.state.formControls.country.value} onChange={this.handleChange}
-                         touched={this.state.formControls.country.touched} valid={this.state.formControls.country.valid}
-                         options={Countries}/>
+                <List name="country" label="Nationality:" headerItem="Select a country:" options={Countries} ref={this.countryRef}/>
 
-                <input type="submit" value="Register" id="register-button"/>
+                <input type="submit" value="Register" id="register-button" className="form-button"/>
         </form>
-            <p className={this.state.formMessage}>Your information has been submitted</p>
+            <div className="submit-message">
+                <p className={(this.props.registered!==undefined)
+                    ? (this.props.registered?"info":"info-hidden") : ("info-hidden")}>
+                    <span><img className="check" src={require('../assets/images/icon.png')} alt="check"/></span>
+                    Your information has been submitted</p>
+            </div>
         </div>)
     }
 }

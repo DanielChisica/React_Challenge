@@ -47,17 +47,21 @@ class login extends React.Component {
     }
 
     render() {
-        console.log(this.props)
-        console.log(this.state)
-        return(<div className="loginForm-container">
+        return(<div className="login-form-container">
+            <div className={"header"}>
+                <h1>Welcome back.</h1>
+            </div>
+            <div className={"paragraph"}>
+                <p>Sign in to get personalized story recommendations, follow authors and topics you love, and interact with stories.</p>
+            </div>
             <Email name="email" label="Account e-mail:" value={this.state.formControls.email.value} onChange={this.handleChange}
                    touched={this.state.formControls.email.touched} valid={this.state.formControls.email.valid}/>
 
             <Password name="password" label="Enter your password:" value={this.state.formControls.password.value} onChange={this.handleChange}
-                      warningMessage="Introduce a password" touched={this.state.formControls.password.touched}
+                      warningMessage="*Introduce a password" touched={this.state.formControls.password.touched}
                       valid={this.state.formControls.password.valid}/>
 
-                      <button id="login-button" onClick={this.loginClick}>Log in</button>
+                      <button id="login-button" onClick={this.loginClick} className="form-button">Log in</button>
         </div>)
     }
 }
