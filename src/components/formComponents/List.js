@@ -12,6 +12,11 @@ class List extends React.Component{
         };
         this.changeSelected=this.changeSelected.bind(this);
         this.hide=this.hide.bind(this);
+        this.baseState=this.state;
+    }
+
+    resetState(){
+        this.setState(this.baseState)
     }
 
     hide(){
@@ -49,6 +54,6 @@ List.propTypes={
     label:PropTypes.string.isRequired,
     options:PropTypes.array.isRequired,
     headerItem:PropTypes.string.isRequired
-}
+};
 
 export default List;

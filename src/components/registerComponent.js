@@ -70,10 +70,11 @@ class register extends React.Component {
                     },
                     touched: false
                 }
-            }
+            },
         };
         this.baseState=this.state;
         this.countryRef=React.createRef();
+        this.pictureRef=React.createRef();
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange=this.handleChange.bind(this);
     }
@@ -92,15 +93,18 @@ class register extends React.Component {
             && this.state.formControls.password.valid){
             console.log(this.state);
             console.log(event.target.picture.files[0]);
-            console.log(this.countryRef.current.state.value)
+            console.log(this.countryRef.current.state.value);
             console.log(event.target.birthday.value);
             this.props.submitUserData(
                 {
                     email:this.state.formControls.email.value,
                     registered:true
                 }
-            )
-            this.setState(this.baseState)
+            );
+            this.countryRef.current.resetState();
+            event.target.birthday.value="";
+            this.setState(this.baseState);
+            this.pictureRef.current.cleanFiles();
         } else{
             console.log('Uncompleted data')
         }
@@ -129,7 +133,7 @@ class register extends React.Component {
                           onChange={this.handleChange} touched={this.state.formControls.password.touched}
                           valid={this.state.formControls.password.valid}/>
 
-                <Picture name="picture" label="Select a profile picture"/>
+                <Picture name="picture" label="Select a profile picture" ref={this.pictureRef} id="input-file-1"/>
 
                 <Phone name="phone" label="Enter a phone number: " value={this.state.formControls.phone.value} onChange={this.handleChange}
                        touched={this.state.formControls.phone.touched} valid={this.state.formControls.phone.valid}/>
@@ -139,7 +143,7 @@ class register extends React.Component {
                     <Form.Control type="date" name="birthday" placeholder="dd-mm-yyyy"/>
                 </label>
 
-                <List name="country" label="Nationality:" headerItem="Select a country:" options={Countries} ref={this.countryRef}/>
+                <List label="Nationality:" headerItem="Select a country:" options={Countries} ref={this.countryRef}/>
 
                 <input type="submit" value="Register" id="register-button" className="form-button"/>
         </form>

@@ -21,7 +21,7 @@ const Email = props => {
             <div className="error-container"><p className={warningControl}>*Invalid e-mail, please verify it</p></div>
         </div>
     );
-}
+};
 
 Email.propTypes={
     name: PropTypes.string.isRequired,
@@ -30,6 +30,6 @@ Email.propTypes={
     onChange: PropTypes.func.isRequired,
     touched: PropTypes.bool.isRequired,
     valid:PropTypes.bool.isRequired
-}
+};
 
 export default Email;
