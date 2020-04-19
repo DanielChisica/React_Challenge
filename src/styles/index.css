@@ -126,11 +126,6 @@ input:focus, textarea:focus, .form-button {
     font-size: 13px;
 }
 
-.navbar-item{
-    font-family: "Freight Sans Medium";
-    font-size: 26px;
-}
-
 .header{
     font-family: "Freight Sans Bold";
     font-size: 26px;
@@ -197,10 +192,11 @@ input:focus, textarea:focus, .form-button {
 }
 
 .navbar-logo{
-    height: 39px;
     width: 158px;
     padding-top: 11px;
     margin-left: 55%;
+    max-width: 100%;
+    height: auto;
 }
 
 .nav-link{
@@ -230,4 +226,41 @@ input:focus, textarea:focus, .form-button {
 
 .nav-link{
     padding-left: 60px;
+}
+
+@media (max-width: 800px){
+    .input-element, .show-warning, .label, .header, .paragraph, .subtitle, .info, .nav-link{
+        font-size:21px;
+    }
+
+    .headline{
+        font-size: 26px;
+    }
+
+    .nav-bar{
+        margin-left: 28%;
+    }
+
+    .nav-link{
+        padding-left: 20px;
+    }
+
+    .navbar-logo{
+        padding-left: 0;
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 1080px){
+    .input-element, .show-warning, .label, .header, .paragraph, .subtitle, .info, .nav-link{
+        font-size:23px;
+    }
+
+    .headline{
+        font-size: 39px;
+    }
+
+    .nav-bar{
+        margin-left: 38%;
+    }
 }
