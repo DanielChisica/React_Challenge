@@ -9,6 +9,7 @@ import Name from "./formComponents/Name";
 import Password from "./formComponents/Password";
 import Phone from "./formComponents/Phone";
 import Picture from "./formComponents/Picture";
+import {animateScroll} from 'react-scroll';
 
 /**
  * Class which represents register React component
@@ -91,20 +92,31 @@ class register extends React.Component {
         event.preventDefault();
         if (this.state.formControls.name.valid && this.state.formControls.lastName.valid && this.state.formControls.email.valid
             && this.state.formControls.password.valid){
-            console.log(this.state);
-            console.log(event.target.picture.files[0]);
-            console.log(this.countryRef.current.state.value);
-            console.log(event.target.birthday.value);
-            this.props.submitUserData(
-                {
-                    email:this.state.formControls.email.value,
-                    registered:true
-                }
-            );
-            this.countryRef.current.resetState();
-            event.target.birthday.value="";
-            this.setState(this.baseState);
-            this.pictureRef.current.cleanFiles();
+            let promise= new Promise(resolve => {
+                console.log(this.state);
+                console.log(event.target.picture.files[0]);
+                console.log(this.countryRef.current.state.value);
+                console.log(event.target.birthday.value);
+                this.props.submitUserData(
+                    {
+                        email:this.state.formControls.email.value,
+                        registered:true
+                    }
+                );
+                this.countryRef.current.resetState();
+                event.target.birthday.value="";
+                this.setState(this.baseState);
+                this.pictureRef.current.cleanFiles();
+                setTimeout(()=>{
+                    if(this.props.registered){
+                        resolve(this.props.registered)
+                    } else {
+                        console.log('Not registered yet')
+                    }
+                },3100)
+            }).then(()=>{
+                    animateScroll.scrollToBottom();
+            })
         } else{
             console.log('Uncompleted data')
         }
