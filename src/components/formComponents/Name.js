@@ -1,6 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/**
+ * Constant which represents an input name element
+ * @param props Passed props by the parent component
+ * @returns {*} The React Component
+ * @constructor
+ */
 const Name = props => {
 
     let inputElement = "input-element";

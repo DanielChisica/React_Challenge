@@ -2,7 +2,8 @@ import validate from "./validation";
 
 /**
  * Manages the change event of an input element
- * @param event
+ * @param event onChange event
+ * @param form Which its state will be modified
  */
 const changeHandler = (event,form) => {
     const name = event.target.name;

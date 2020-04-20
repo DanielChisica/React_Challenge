@@ -1,4 +1,9 @@
 import React from 'react';
+
+/**
+ * Constant which represents the home component
+ * @returns {*}
+ */
 const homeComponent = ()=>{
     return(
       <div className={"home-page"}>

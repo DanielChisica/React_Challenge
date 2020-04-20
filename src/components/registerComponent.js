@@ -80,13 +80,17 @@ class register extends React.Component {
         this.handleChange=this.handleChange.bind(this);
     }
 
+    /**
+     * Function which is triggered when the input field has changed
+     * @param event Input field onChange event
+     */
     handleChange(event){
         changeHandler(event,this);
     }
 
     /**
      * Manages the submit event of the form
-     * @param event
+     * @param event onSubmit form event
      */
     handleSubmit(event) {
         event.preventDefault();

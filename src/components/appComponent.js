@@ -7,6 +7,9 @@ import '../styles/index.css'
 
 Modal.setAppElement("#root");
 
+/**
+ * Represents the React main app Component
+ */
 class AppComponent extends React.Component {
     render() {
         return (

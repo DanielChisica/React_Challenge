@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/**
+ * This class represents an input file element which is used to upload images
+ */
 class Picture extends React.Component{
 
     constructor(props) {
@@ -11,6 +14,9 @@ class Picture extends React.Component{
         }
     }
 
+    /**
+     * Deletes the previous uploaded images
+     */
     cleanFiles(){
         this.setState(state=>(
             {

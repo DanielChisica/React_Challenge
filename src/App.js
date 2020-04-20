@@ -3,6 +3,9 @@ import {Provider} from 'react-redux';
 import AppContainer from "./Redux/containers/appContainer";
 import store from "./Redux/stores/mainStore";
 
+/**
+ * This class represents the whole Redux-React application component
+ */
 class App extends React.Component {
     render() {
     return (
@@ -11,6 +14,6 @@ class App extends React.Component {
         </Provider>
     );
   }
-};
+}
 
 export default App;

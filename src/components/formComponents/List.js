@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/**
+ * This React component class represents a Dropdown List
+ */
 class List extends React.Component{
     constructor(props) {
         super(props);
@@ -15,14 +18,25 @@ class List extends React.Component{
         this.baseState=this.state;
     }
 
+    /**
+     * Resets the state of the list and deletes changes made by the user
+     */
     resetState(){
         this.setState(this.baseState)
     }
 
+    /**
+     * Hides the options listed by the dropdown list
+     */
     hide(){
         this.setState({hide:!this.state.hide})
     }
 
+    /**
+     * Changes the selected option when a user clicks at it
+     * @param selectedItem Name of the selected option
+     * @param code Represents the option value
+     */
     changeSelected(selectedItem,code){
         this.setState({selected:selectedItem,value:code});
         this.hide()

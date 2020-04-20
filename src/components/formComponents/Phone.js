@@ -1,6 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/**
+ * Constant which represents a phone input element
+ * @param props Passed props by the parent component
+ * @returns {*} React component
+ * @constructor
+ */
 const Phone = props => {
 
     let inputElement = "input-element";

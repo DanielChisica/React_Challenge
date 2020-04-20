@@ -3,6 +3,10 @@ import '../styles/index.css'
 import changeHandler from "../classes/changeHandler";
 import Email from "./formComponents/Email";
 import Password from "./formComponents/Password";
+
+/**
+ * Class which represents the login component
+ */
 class login extends React.Component {
     constructor(props) {
         super(props);
@@ -33,6 +37,10 @@ class login extends React.Component {
         this.handleChange= this.handleChange.bind(this);
     }
 
+    /**
+     * Function which is triggered when the log in button is clicked
+     * @param event Mouse click event
+     */
     loginClick(event){
         event.preventDefault();
         if (this.state.formControls.email.valid && this.state.formControls.password.valid){
@@ -42,6 +50,10 @@ class login extends React.Component {
         }
     }
 
+    /**
+     * Function which is triggered when the input field has changed
+     * @param event Input field onChange event
+     */
     handleChange(event){
         changeHandler(event,this);
     }

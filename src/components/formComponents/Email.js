@@ -1,6 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/**
+ * This constant represents the Email component
+ * @param props Passed props by the parent component
+ * @returns {*} The React Component
+ * @constructor
+ */
 const Email = props => {
 
     let inputElement = "input-element";

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+/**
+ * This class represents a Navigation bar
+ */
 export default class Navbar extends Component {
-
     render() {
         return (
                 <div className="navbar">

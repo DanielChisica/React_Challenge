@@ -1,6 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/**
+ * Constants which represents a password input element
+ * @param props Passed props by the parent component
+ * @returns {*} React component
+ * @constructor
+ */
 const Password = props => {
 
     let inputElement = "input-element";
